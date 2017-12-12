@@ -24,23 +24,23 @@ angular
             // }
 
             $scope.getAge =
-            function (dateString) {
-                let today = new Date();
-                let birthDate = new Date(dateString);
-                let age = today.getFullYear() - birthDate.getFullYear();
-                let m = today.getMonth() - birthDate.getMonth();
-                let da = today.getDate() - birthDate.getDate();
-                if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                    age--;
+                function (dateString) {
+                    let today = new Date();
+                    let birthDate = new Date(dateString);
+                    let age = today.getFullYear() - birthDate.getFullYear();
+                    let m = today.getMonth() - birthDate.getMonth();
+                    let da = today.getDate() - birthDate.getDate();
+                    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                        age--;
+                    }
+                    if (m < 0) {
+                        m += 12;
+                    }
+                    if (da < 0) {
+                        da += 30;
+                    }
+                    return age + " years " + Math.abs(m) + " months " + Math.abs(da) + " days";
                 }
-                if(m<0){
-                    m +=12;
-                }
-                if(da<0){
-                    da +=30;
-                }
-                return age+" years "+ Math.abs(m) + " months "+ Math.abs(da) + " days";
-            }
 
             /*
 
@@ -48,11 +48,13 @@ angular
             This function is bound to an ng-click directive
             on the button in the view
             */
-            $scope.deleteChild = () =>
-            console.log("first time hitting delete")
-                ChildFactory.delete($routeParams.childId).then(() =>
-                    $location.url("/"));
+            $scope.deleteChild = function () {
+                console.log("first time hitting delete")
+                ChildFactory.delete($routeParams.childId).then(() => {
+                    $location.url("/");
+                })
 
 
+            }
         }
     )

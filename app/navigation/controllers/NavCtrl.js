@@ -10,7 +10,7 @@ angular.module("babyMammaApp").controller("NavCtrl",
             $scope.user = user.displayName
 
         }
-        $timeout(userName,500)
+        $timeout(userName,300)
         $scope.isAuthenticated = () => AuthFactory.isAuthenticated();
 
         // Unauthenticate the client.
