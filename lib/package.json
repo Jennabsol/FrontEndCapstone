@@ -1,0 +1,17 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "description": "babyMamma app",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "angular-route": "^1.6.7",
+    "firebase": "^4.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jenna Solis",
+  "license": "MIT"
+}

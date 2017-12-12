@@ -1,0 +1,9 @@
+{
+    "user": [{"id": 1}],
+    "children": [{"id": 2}],
+    "wet": [{"id": 3}],
+    "poop": [{"id": 4}],
+    "sleep": [{"id": 5}],
+    "bottle": [{"id": 6}],
+    "nursing": [{"id": 7}]
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>babyMamma</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body ng-app="babyMammaApp" ng-cloak>
+
+    <nav ng-include="'app/navigation/partials/navigation.html'"></nav>
+
+    <div ng-view></div>
+
+
+    <script src="./lib/node_modules/firebase/firebase.js"></script>
+    <script src="./lib/node_modules/angular/angular.min.js"></script>
+    <script src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="./app/app.js"></script>
+    <script src="./app/app.config.js"></script>
+
+    <script src="./app/auth/factories/AuthFactory.js"></script>
+    <script src="./app/auth/controllers/AuthCtrl.js"></script>
+
+    <script src="./app/navigation/controllers/NavCtrl.js"></script>
+    <script src="./app/child/factories/ChildFactory.js"></script>
+    <script src="./app/child/controllers/ChildListCtrl.js"></script>
+    <script src="./app/child/controllers/ChildCreateCtrl.js"></script>
+    <script src="./app/child/controllers/ChildDetailCtrl.js"></script>
+  </body>
+</html>
