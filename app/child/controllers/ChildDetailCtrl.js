@@ -2,7 +2,7 @@
 angular
     .module("babyMammaApp")
     .controller("ChildDetailCtrl",
-        function ($scope, $location, $routeParams, ChildFactory) {
+        function ($scope, $location, $routeParams, ChildFactory, $timeout) {
             $scope.child = {}
             /**
              * Use the factory to get the details of a single employee
@@ -51,6 +51,7 @@ angular
             $scope.deleteChild = function () {
                 console.log("first time hitting delete")
                 ChildFactory.delete($routeParams.childId).then(() => {
+                    $timeout()
                     $location.url("/");
                 })
 

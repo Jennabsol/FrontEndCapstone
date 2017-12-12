@@ -1,5 +1,5 @@
 angular.module("babyMammaApp")
-    .factory("AuthFactory", function ($http, $timeout, $location, $route) {
+    .factory("AuthFactory", function ($http, $timeout, $location, $route, $rootScope) {
         let currentUserData = null
 
         firebase.auth().onAuthStateChanged(function (user) {
@@ -13,7 +13,7 @@ angular.module("babyMammaApp")
                 } else {
                     $route.reload()
                 }
-
+                $rootScope.$broadcast("authenticationSuccess")
             } else {
                 currentUserData = null
                 console.log("User is not authenticated")
@@ -31,7 +31,7 @@ angular.module("babyMammaApp")
                 }
             },
             getUser: {
-                value: () => firebase.auth().currentUser
+                value: () => currentUserData
             },
             logout: {
                 value: () => firebase.auth().signOut()

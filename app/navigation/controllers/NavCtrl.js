@@ -1,16 +1,15 @@
 angular.module("babyMammaApp").controller("NavCtrl",
-    function ($scope, $location, AuthFactory, ChildFactory, $timeout) {
+    function ($scope, $location, AuthFactory, ChildFactory, $timeout, $rootScope) {
         /*
         Just a pass-through method to the AuthFactory method of the
         same name.
         */
-        function userName() {
-            let user = firebase.auth().currentUser
 
-            $scope.user = user.displayName
+        $rootScope.$on("authenticationSuccess", function () {
+            $timeout()
+            $scope.displayName = AuthFactory.getUser().displayName
+       })
 
-        }
-        $timeout(userName,300)
         $scope.isAuthenticated = () => AuthFactory.isAuthenticated();
 
         // Unauthenticate the client.
