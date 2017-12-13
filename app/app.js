@@ -44,6 +44,26 @@ angular.module("babyMammaApp").config(function ($routeProvider) {
             controller: 'ChildDetailCtrl',
             resolve: { isAuth }
         })
+        .when("/sleep/list", {
+            templateUrl: "app/sleep/partials/sleepList.html",
+            controller: "SleepListCtrl",
+            resolve: { isAuth }
+        })
+        .when('/sleep/start', {
+            templateUrl: 'app/sleep/partials/startSleep.html',
+            controller: 'SleepStartCtrl',
+            resolve: { isAuth }
+        })
+        .when('/sleep/end', {
+            templateUrl: 'app/sleep/partials/endSleep.html',
+            controller: 'SleepEndCtrl',
+            resolve: { isAuth }
+        })
+        .when('/sleep/detail/:napId', {
+            templateUrl: 'app/sleep/partials/sleepDetail.html',
+            controller: 'SleepDetailCtrl',
+            resolve: { isAuth }
+        })
         .when('/auth', {
             templateUrl: 'app/auth/partials/register.html',
             controller: 'AuthCtrl'

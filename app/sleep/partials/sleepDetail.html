@@ -1,0 +1,10 @@
+<div>
+    <h1>{{ nap.date | date:"fullDate" }}</h1>
+
+    <h3>start: {{ nap.startTime }}</h3>
+    <h3>end: {{ nap.endTime }}</h3>
+    <h3>Child id: {{ nap.childId }}</h3>
+    <h3>{{ nap }}</h3>
+    </div>
+
+    <button ng-click="deleteNap()">Delete</button>

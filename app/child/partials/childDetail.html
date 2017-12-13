@@ -5,7 +5,7 @@
 <h3>Date of birth: {{ child.DOB | date:"fullDate" }}</h3>
 <h3>Age: {{ getAge(child.DOB) }}</h3>
 <h3>Parent id: {{ child.parentId }}</h3>
-<h3>Child id: {{ childId }}</h3>
+<h3>Child id: {{ child }}</h3>
 </div>
 
 <button ng-click="deleteChild()">Delete</button>
