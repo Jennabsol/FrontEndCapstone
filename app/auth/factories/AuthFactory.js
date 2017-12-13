@@ -13,6 +13,7 @@ angular.module("babyMammaApp")
                 } else {
                     $route.reload()
                 }
+                
                 $rootScope.$broadcast("authenticationSuccess")
             } else {
                 currentUserData = null
