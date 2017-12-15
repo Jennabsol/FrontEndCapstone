@@ -1,10 +1,5 @@
 <h2>Sleep List</h2>
 
-
-<!-- Notice anything strange about the anchor tag there?
-        That's a strange looking URL for the href property. Well, since you're now starting the process
-        of building a SPA, then you don't want any link to actually refresh the browser, and so by prepending
-        the new location with #, you ensure that. You'll see this in action as we set up the routing. -->
-<div ng-repeat="nap in sleep">
-    <a href="#!/nap/detail/{{ nap.id }}">{{ nap }}</a>
+<div ng-repeat ="nap in sleep">
+    <a href="#!/sleep/detail/{{ nap.id }}">{{ nap.location }}</a>
 </div>

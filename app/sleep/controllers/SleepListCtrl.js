@@ -1,16 +1,13 @@
 angular
 .module("babyMammaApp")
 .controller("SleepListCtrl", function (SleepFactory, $scope) {
-    $scope.Sleep = []
+    $scope.sleep = []
 
     /**
      * Use factory to get all children from Firebase
      */
     SleepFactory.napList().then(data => {
-
-
-
-        $scope.Sleep = data
+        $scope.sleep = data
     })
 })
 

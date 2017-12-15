@@ -51,7 +51,7 @@ angular
 
                             })
                         }).catch(function (error) {
-                            notify.log("Error while deleting the article. Please try again.")
+                            console.log("Error while deleting the article. Please try again.")
                         })
                 }
             },
@@ -66,7 +66,7 @@ angular
                                 data: nap
                             })
                         }).catch(function (error) {
-                            notify.log("Error while updating the article. Please try again.")
+                            console.log("Error while updating the article. Please try again.")
                         })
                 }
             },
@@ -80,19 +80,15 @@ angular
                                 method: "POST",
                                 url: `https://babymomma-b6771.firebaseio.com/sleep/.json?auth=${idToken}`,
                                 data: {
-                                    "startTime": nap.startTime,
-                                    "endTime": nap.endTime,
                                     "location": nap.location,
-                                    "date": new Date(year, month, day),
-                                    "notes": nap.notes,
-                                    "childId": null,
-                                    "id": uid,
-                                    "reason": nap.reason
+                                    "Date": new Date(),
+                                    "startTime": new Date()
+
 
                                 }
                             })
                         }).catch(function (error) {
-                            notify.log("Error while adding the article. Please try again.")
+                            console.log("Error while adding the article. Please try again.")
                         })
                 }
             },
@@ -102,11 +98,11 @@ angular
                         .then(idToken => {
 
                             return $http({
-                                method: "PUT",
+                                method: "PATCH",
                                 url: `https://babymomma-b6771.firebaseio.com/sleep/${key}/.json?auth=${idToken}`,
                                 data: {
 
-                                    "endTime": nap.endTime,
+                                    "endTime": new Date(),
                                     "notes": nap.notes,
                                     "reason": nap.reason
 
@@ -114,7 +110,7 @@ angular
                                 }
                             })
                         }).catch(function (error) {
-                            notify.log("Error while adding the article. Please try again.")
+                            console.log("Error while adding the article. Please try again.")
                         })
                 }
             }

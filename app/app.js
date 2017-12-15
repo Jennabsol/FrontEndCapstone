@@ -54,7 +54,7 @@ angular.module("babyMammaApp").config(function ($routeProvider) {
             controller: 'SleepStartCtrl',
             resolve: { isAuth }
         })
-        .when('/sleep/end', {
+        .when('/sleep/end/:napId', {
             templateUrl: 'app/sleep/partials/endSleep.html',
             controller: 'SleepEndCtrl',
             resolve: { isAuth }

@@ -23,7 +23,6 @@ angular
     $scope.endNap = function () {
         const nap = {
 
-            "endTime": $scope.newNap.endTime,
             "notes": $scope.newNap.notes,
             "reason": $scope.newNap.reason
 
@@ -33,7 +32,7 @@ angular
         /**
          * Use the factory to POST to Firebase then clear
          */
-        SleepFactory.addEndNap(nap, "sleep", $routeParams.napId).then(() => {
+        SleepFactory.addEndNap(nap, $routeParams.napId).then(() => {
             $scope.newNap.notes = "",
             $scope.newNap.reason = ""
 

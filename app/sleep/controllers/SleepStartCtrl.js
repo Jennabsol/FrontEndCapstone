@@ -23,14 +23,9 @@ angular
     $scope.startNap = function () {
         const nap = {
 
-            "startTime": $scope.newNap.startTime,
-            "endTime": $scope.newNap.endTime,
-            "location": $scope.newNap.location,
 
-            "notes": $scope.newNap.notes,
-            "childId": null,
+            "location": $scope.newNap.location
 
-            "reason": $scope.newNap.reason
 
 
         }
@@ -38,9 +33,9 @@ angular
         /**
          * Use the factory to POST to Firebase then clear
          */
-        SleepFactory.addStartNap(nap, "sleep").then(() => {
+        SleepFactory.addStartNap(nap, "sleep").then((response) => {
             $scope.newNap.location = ""
-
+return response
 
 
         })
@@ -48,18 +43,17 @@ angular
         /**
          * If POST was successful, retrieve new list of sleep
          */
-        .then(() => {
-            return SleepFactory.napList()
+        .then((res) => {
+            $scope.sleep = SleepFactory.napList()
+            $location.url(`/sleep/end/${res.data.name}`)
+            console.log(res)
         })
 
         /**
          * Bind new list of sleep to scope so view gets updated
          */
-        .then(sleep => {
-            $scope.sleep = sleep
-            $timeout()
-            $location.url("/sleep/end")
-        })
+
+
     }
 })
 

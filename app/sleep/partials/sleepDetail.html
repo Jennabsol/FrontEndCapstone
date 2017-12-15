@@ -1,10 +1,10 @@
 <div>
-    <h1>{{ nap.date | date:"fullDate" }}</h1>
+    <h3>Date: {{ nap.Date | date : "shortDate" }}</h3>
+    <h3>start: {{ nap.startTime | date : "shortTime" }}</h3>
+    <h3>end: {{ nap.endTime | date : "shortTime" }}</h3>
+    <h3>Location: {{ nap.location }}</h3>
+    <h3>Reason: {{ nap.reason }}</h3>
+    <h3>Notes: {{ nap.notes }}</h3>
+</div>
 
-    <h3>start: {{ nap.startTime }}</h3>
-    <h3>end: {{ nap.endTime }}</h3>
-    <h3>Child id: {{ nap.childId }}</h3>
-    <h3>{{ nap }}</h3>
-    </div>
-
-    <button ng-click="deleteNap()">Delete</button>
+<button ng-click="deleteNap()">Delete</button>
