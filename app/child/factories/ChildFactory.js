@@ -1,6 +1,19 @@
 angular
     .module("babyMammaApp")
     .factory("ChildFactory", function ($http, AuthFactory) {
+        const uuidGenerator = function* () {
+            while (true) {
+                let time = new Date().getTime()
+                let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (char) {
+                    const random = (time + Math.random() * 16) % 16 | 0
+                    return (char === 'x' ? random : (random & 0x3 | 0x8)).toString(16)
+                })
+                yield uuid
+            }
+        }
+
+        // Create instance of generator
+        const idGenerator = uuidGenerator()
         return Object.create(null, {
             "cache": {
                 value: null,
@@ -82,7 +95,8 @@ angular
                                 data: {
                                     "name": child.name,
                                     "DOB": child.DOB,
-                                    "parentId": user.uid
+                                    "parentId": user.uid,
+                                    "childId": idGenerator.next().value
                                 }
                             })
                         }).catch(function (error) {

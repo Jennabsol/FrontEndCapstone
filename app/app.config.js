@@ -11,3 +11,10 @@ angular.module("babyMammaApp").run(function (FIREBASE_CONFIG) {
     firebase.initializeApp(FIREBASE_CONFIG)
 })
 
+angular.module("babyMammaApp").config(['$sceDelegateProvider' , function ($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+        'https://api.forismatic.com/api/1.0/**',
+        'http://127.0.0.1:8080/**'
+    ]);
+ }])

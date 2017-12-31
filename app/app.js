@@ -44,6 +44,11 @@ angular.module("babyMammaApp").config(function ($routeProvider) {
             controller: 'ChildDetailCtrl',
             resolve: { isAuth }
         })
+        .when('/child/dashboard/:childId', {
+            templateUrl: 'app/child/partials/dashboard.html',
+            controller: 'DashCtrl',
+            resolve: { isAuth }
+        })
         .when("/sleep/list", {
             templateUrl: "app/sleep/partials/sleepList.html",
             controller: "SleepListCtrl",

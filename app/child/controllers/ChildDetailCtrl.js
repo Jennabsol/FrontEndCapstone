@@ -1,11 +1,11 @@
-// this uses route parameter to request the employee and display the details
+// this uses route parameter to request the child and display the details
 angular
     .module("babyMammaApp")
     .controller("ChildDetailCtrl",
         function ($scope, $location, $routeParams, ChildFactory, $timeout) {
             $scope.child = {}
             /**
-             * Use the factory to get the details of a single employee
+             * Use the factory to get the details of a single child
              */
 
             ChildFactory.single($routeParams.childId).then(child => {
@@ -14,14 +14,7 @@ angular
             })
 
 
-            // $scope.getAge =
-            // function (birthday) {
-            //     birthday = new Date(birthday);
-            //     let today = new Date();
-            //     let age = ((today - birthday) / (31557600000));
-            //     age = Math.floor(age);
-            //     return age
-            // }
+
 
             $scope.getAge =
                 function (dateString) {

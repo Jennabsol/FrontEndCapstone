@@ -1,6 +1,7 @@
 angular
 .module("babyMammaApp")
-.controller("ChildListCtrl", function (ChildFactory, $scope) {
+.controller("ChildListCtrl", function (ChildFactory, $scope, AuthFactory) {
+    
     $scope.children = []
 
     /**
