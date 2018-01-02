@@ -1,5 +1,5 @@
-
-<h2>Child List</h2>
+<h2>
+    Child List</h2>
 
 
 <!-- Notice anything strange about the anchor tag there?
@@ -11,4 +11,19 @@
 </div>
 <div>
     <a href="/#!/child/new">Add Child</a>
+</div>
+
+<div ng-controller="ChildCreateCtrl">
+    <h2>Add Child</h2>
+    <form ng-submit="addChild()">
+        <div>
+            Name:
+            <input type="text" ng-model="newChild.name">
+        </div>
+        <div>
+            Date of Birth:
+            <input type="date" ng-model="newChild.DOB">
+        </div>
+        <button>Add Child</button>
+    </form>
 </div>

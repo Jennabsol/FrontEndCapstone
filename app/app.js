@@ -30,20 +30,20 @@ angular.module("babyMammaApp").config(function ($routeProvider) {
             resolve: { isAuth }
         })
         // Adding a new child
-        .when('/child/new', {
-            templateUrl: 'app/child/partials/createChild.html',
-            controller: 'ChildCreateCtrl',
-            resolve: { isAuth }
-        })
+        // .when('/child/new', {
+        //     templateUrl: 'app/child/partials/createChild.html',
+        //     controller: 'ChildCreateCtrl',
+        //     resolve: { isAuth }
+        // })
         /* Notice that the URL has a colon in front of childId. The colon is the magic.
         It tells Angular routing that anything located at that location in the URL should be captured
         and be made available in the $routeParams object that was injected into the controller.
         The new route binds the detail.html partial to the ChildDetailCtrl controller. */
-        .when('/child/detail/:childId', {
-            templateUrl: 'app/child/partials/childDetail.html',
-            controller: 'ChildDetailCtrl',
-            resolve: { isAuth }
-        })
+        // .when('/child/detail/:childId', {
+        //     templateUrl: 'app/child/partials/childDetail.html',
+        //     controller: 'ChildDetailCtrl',
+        //     resolve: { isAuth }
+        // })
         .when('/child/dashboard/:childId', {
             templateUrl: 'app/child/partials/dashboard.html',
             controller: 'DashCtrl',
@@ -69,6 +69,27 @@ angular.module("babyMammaApp").config(function ($routeProvider) {
             controller: 'SleepDetailCtrl',
             resolve: { isAuth }
         })
+        .when("/diaperChanges/wet/list", {
+            templateUrl: "app/diaperChanges/partials/wetList.html",
+            controller: "WetListCtrl",
+            resolve: { isAuth }
+        })
+        .when("/diaperChanges/poop/list", {
+            templateUrl: "app/diaperChanges/partials/poopList.html",
+            controller: "PoopListCtrl",
+            resolve: { isAuth }
+        })
+        // .when("/diaperChanges/poop/add", {
+        //     templateUrl: "app/diaperChanges/partials/addPoop.html",
+        //     controller: "PoopAddCtrl",
+        //     resolve: { isAuth }
+        // })
+        // .when("/diaperChanges/wet/add", {
+        //     templateUrl: "app/diaperChanges/partials/addWet.html",
+        //     controller: "WetAddCtrl",
+        //     resolve: { isAuth }
+        // })
+
         .when('/auth', {
             templateUrl: 'app/auth/partials/register.html',
             controller: 'AuthCtrl'

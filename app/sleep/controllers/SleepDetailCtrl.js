@@ -15,7 +15,7 @@ angular
 
 
 
-        $scope.deleteNap = function () {
+        $scope.deleteNapBtn = function () {
             console.log("first time hitting delete")
             SleepFactory.deleteNap($routeParams.napId).then(() => {
                 $timeout()

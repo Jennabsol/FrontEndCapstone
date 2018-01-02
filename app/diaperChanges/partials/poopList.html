@@ -1,0 +1,20 @@
+<h2>Poop Diaper List</h2>
+
+<ul ng-repeat="diaper in poop">
+    <li>
+        {{ diaper.date | date : "shortTime" }}
+    </li>
+    <li>
+        Notes: {{ diaper.notes }}
+    </li>
+    <li>
+        <button ng-click="deleteDiaperBtn()">Delete</button>
+    </li>
+
+</ul>
+
+
+
+<!-- <div ng-repeat ="diaper in wet">
+    <a href="#!/sleep/detail/{{ nap.id }}">{{ diaper.date | date : "shortTime" }}</a>
+</div> -->

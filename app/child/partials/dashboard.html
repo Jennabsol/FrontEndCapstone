@@ -2,7 +2,7 @@
 <div>
     <ul>
         <li>
-            <a href="#!/child/detail/{{ child.id }}">{{ child.name }}</a>
+            <a href="#"></a>{{ child.name }}</a>
         </li>
         <li>
             <a href="/#!/sleep/list">Sleep List</a>
@@ -10,5 +10,51 @@
         <li>
             <a href="/#!/sleep/start">Add Nap</a>
         </li>
+        <li>
+            <a href="/#!/diaperChanges/wet/list">Wet Diaper List</a>
+        </li>
+        <li>
+            <a href="/#!/diaperChanges/poop/list">Poop Diaper List</a>
+        </li>
+        
     </ul>
+</div>
+
+<div ng-controller="ChildDetailCtrl">
+
+    <div>
+        <h1>{{ child.name }}</h1>
+
+        <h3>Date of birth: {{ child.DOB | date:"fullDate" }}</h3>
+        <h3>Age: {{ getAge(child.DOB) }}</h3>
+        <h3>Parent id: {{ child.parentId }}</h3>
+        <h3>Child id: {{ child.childId }}</h3>
+    </div>
+
+    <button ng-click="deleteChild()">Delete</button>
+</div>
+
+<div ng-controller="PoopAddCtrl">
+
+    <h2>Add Poop Diaper</h2>
+    <form ng-submit="addPoop()">
+        <div>
+            Notes:
+            <input type="text" ng-model="newPoopDiaper.notes">
+        </div>
+
+        <button>Add</button>
+    </form>
+</div>
+
+<div ng-controller="WetAddCtrl">
+    <h2>Add Wet Diaper</h2>
+    <form ng-submit="addWet()">
+        <div>
+            Notes:
+            <input type="text" ng-model="newWetDiaper.notes">
+        </div>
+
+        <button>Add</button>
+    </form>
 </div>
