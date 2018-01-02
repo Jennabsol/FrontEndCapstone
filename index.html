@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>babyMamma</title>
-    
+
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body ng-app="babyMammaApp" ng-cloak>
 
     <nav ng-include="'app/navigation/partials/navigation.html'"></nav>
-    <!-- <div ng-include="'app/quoteApi/partials/quoteDisplay.html'"></div> -->
+    <div ng-include="'app/quoteApi/partials/quoteDisplay.html'"></div>
     <!-- <div ng-include="'https://api.forismatic.com/api/1.0/?method=getQuote&format=html&lang=en'"></div> -->
     <!-- <div ng-include="'app/child/partials/childList.html'"></div> -->
 
@@ -22,19 +22,24 @@
     <script src="./lib/node_modules/firebase/firebase.js"></script>
     <script src="./lib/node_modules/angular/angular.min.js"></script>
     <script src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="./lib/node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="./lib/node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="./lib/node_modules/tc-angular-chartjs/dist/tc-angular-chartjs.min.js"></script>
     <script src="./app/app.js"></script>
     <script src="./app/app.config.js"></script>
 
     <script src="./app/auth/factories/AuthFactory.js"></script>
     <script src="./app/auth/controllers/AuthCtrl.js"></script>
     <script src="./app/navigation/controllers/NavCtrl.js"></script>
-    <!-- <script src="./app/quoteApi/controllers/QuoteDisplayCtrl.js"></script> -->
+    <script src="./app/quoteApi/controllers/QuoteDisplayCtrl.js"></script>
 
     <script src="./app/child/factories/ChildFactory.js"></script>
     <script src="./app/child/controllers/ChildListCtrl.js"></script>
     <script src="./app/child/controllers/ChildCreateCtrl.js"></script>
     <script src="./app/child/controllers/ChildDetailCtrl.js"></script>
     <script src="./app/child/controllers/DashCtrl.js"></script>
+    <script src="./app/child/controllers/testCtrl.js"></script>
+    <script src="./app/child/controllers/BarCtrl.js"></script>
     <script src="./app/sleep/factories/SleepFactory.js"></script>
     <script src="./app/sleep/controllers/SleepDetailCtrl.js"></script>
     <script src="./app/sleep/controllers/SleepStartCtrl.js"></script>

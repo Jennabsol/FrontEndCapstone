@@ -3,7 +3,7 @@ angular
     .module("babyMammaApp")
     .controller("ChildDetailCtrl",
         function ($scope, $location, $routeParams, ChildFactory, $timeout) {
-            $scope.child = {}
+           
             /**
              * Use the factory to get the details of a single child
              */

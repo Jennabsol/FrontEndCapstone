@@ -9,10 +9,11 @@ angular
             },
             // DiaperFactory.list returns all children which is used by ChildListCtrl
             "diaperList": {
-                value: function (areaInDb) {
+                value: function (areaInDb, childId) {
                     return $http({
                         method: "GET",
-                        url: `${firebaseURL+areaInDb}/.json`
+                        // url: `${firebaseURL+areaInDb}/.json`
+                        url: `${firebaseURL+areaInDb}/.json?orderBy="childId"&equalTo="${childId}"`
                     }).then(response => {
                         const data = response.data
 

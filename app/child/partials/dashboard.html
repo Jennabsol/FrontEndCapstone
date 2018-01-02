@@ -1,23 +1,8 @@
 <!--Partial file for showing dashboard -->
 <div>
-    <ul>
-        <li>
-            <a href="#"></a>{{ child.name }}</a>
-        </li>
-        <li>
-            <a href="/#!/sleep/list">Sleep List</a>
-        </li>
-        <li>
-            <a href="/#!/sleep/start">Add Nap</a>
-        </li>
-        <li>
-            <a href="/#!/diaperChanges/wet/list">Wet Diaper List</a>
-        </li>
-        <li>
-            <a href="/#!/diaperChanges/poop/list">Poop Diaper List</a>
-        </li>
 
-    </ul>
+    <a href="#"></a>{{ child.name }}</a>
+
 </div>
 
 <div ng-controller="ChildDetailCtrl">
@@ -68,4 +53,53 @@
 
         <button>Start</button>
     </form>
+</div>
+
+<div ng-controller="SleepListCtrl">
+    <h2>Sleep List</h2>
+
+    <div ng-repeat="nap in sleep">
+        <a href="#!/sleep/detail/{{ nap.id }}">{{ nap.location }}</a>
+    </div>
+</div>
+
+<div ng-controller="WetListCtrl">
+    <h2>Wet Diaper List</h2>
+
+    <ul ng-repeat="diaper in wet">
+        <li>
+            {{ diaper.date | date : "shortTime" }}
+        </li>
+        <li>
+            Notes: {{ diaper.notes }}
+        </li>
+        <li>
+            <button ng-click="deleteDiaperBtn()">Delete</button>
+        </li>
+    </ul>
+</div>
+
+<div ng-controller="PoopListCtrl">
+    <h2>Poop Diaper List</h2>
+
+    <ul ng-repeat="diaper in poop">
+        <li>
+            {{ diaper.date | date : "shortTime" }}
+        </li>
+        <li>
+            Notes: {{ diaper.notes }}
+        </li>
+        <li>
+            <button ng-click="deleteDiaperBtn(diaper)">Delete</button>
+        </li>
+    </ul>
+</div>
+
+<div ng-controller="testCtrl">
+    <canvas tc-chartjs-bar chart-data="data" chart-options="options" width="350" height="200">
+    </canvas>
+</div>
+<div ng-controller="BarCtrl">
+    <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series">
+    </canvas>
 </div>

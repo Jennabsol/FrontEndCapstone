@@ -1,17 +1,23 @@
 angular
     .module("babyMammaApp")
-    .controller("WetListCtrl", function (DiaperFactory, $scope, $timeout, $location) {
+    .controller("WetListCtrl", function (DiaperFactory,ChildFactory, $scope, $timeout, $location, $routeParams) {
         $scope.wet = []
 
         /**
          * Use factory to get all children from Firebase
          */
-        DiaperFactory.diaperList("wet").then(data => {
-            $scope.wet = data
+        ChildFactory.single($routeParams.childId).then(child => {
+            $scope.child = child
+
+            DiaperFactory.diaperList("wet", child.childId).then(data => {
+                $scope.wet = data
+            })
+
         })
-        $scope.deleteDiaperBtn = function () {
+
+        $scope.deleteDiaperBtn = function (wet) {
             console.log("first time hitting delete")
-            DiaperFactory.deleteDiaper("wet",  ).then(() => {
+            DiaperFactory.deleteDiaper("wet", wet.id ).then(() => {
                 $timeout()
                 $location.url("/diaperChanges/wet/list");
             })

@@ -3,7 +3,7 @@ angular
     .module("babyMammaApp")
     .controller("DashCtrl",
         function ($scope, $location, $routeParams, ChildFactory, $timeout) {
-            $scope.child = {}
+
             /**
              * Use the factory to get single child
              */

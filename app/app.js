@@ -1,4 +1,4 @@
-angular.module("babyMammaApp", ["ngRoute"])
+angular.module("babyMammaApp", ["ngRoute", "tc.chartjs", "chart.js"])
 
 const isAuth = AuthFactory => new Promise ((resolve, reject) => {
     if (AuthFactory.isAuthenticated()){
@@ -49,11 +49,7 @@ angular.module("babyMammaApp").config(function ($routeProvider) {
             controller: 'DashCtrl',
             resolve: { isAuth }
         })
-        .when("/sleep/list", {
-            templateUrl: "app/sleep/partials/sleepList.html",
-            controller: "SleepListCtrl",
-            resolve: { isAuth }
-        })
+        
         // .when('/sleep/start', {
         //     templateUrl: 'app/sleep/partials/startSleep.html',
         //     controller: 'SleepStartCtrl',
@@ -69,16 +65,16 @@ angular.module("babyMammaApp").config(function ($routeProvider) {
             controller: 'SleepDetailCtrl',
             resolve: { isAuth }
         })
-        .when("/diaperChanges/wet/list", {
-            templateUrl: "app/diaperChanges/partials/wetList.html",
-            controller: "WetListCtrl",
-            resolve: { isAuth }
-        })
-        .when("/diaperChanges/poop/list", {
-            templateUrl: "app/diaperChanges/partials/poopList.html",
-            controller: "PoopListCtrl",
-            resolve: { isAuth }
-        })
+        // .when("/diaperChanges/wet/list", {
+        //     templateUrl: "app/diaperChanges/partials/wetList.html",
+        //     controller: "WetListCtrl",
+        //     resolve: { isAuth }
+        // })
+        // .when("/diaperChanges/poop/list", {
+        //     templateUrl: "app/diaperChanges/partials/poopList.html",
+        //     controller: "PoopListCtrl",
+        //     resolve: { isAuth }
+        // })
         // .when("/diaperChanges/poop/add", {
         //     templateUrl: "app/diaperChanges/partials/addPoop.html",
         //     controller: "PoopAddCtrl",
