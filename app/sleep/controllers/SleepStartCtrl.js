@@ -23,7 +23,7 @@ angular
         $scope.startNap = function () {
             const nap = {
 
-
+                "childId": $scope.child.childId,
                 "location": $scope.newNap.location
 
 
@@ -49,7 +49,7 @@ angular
                     console.log(res)
                 })
 
-          
+
 
 
         }

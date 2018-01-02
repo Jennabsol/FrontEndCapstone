@@ -88,7 +88,7 @@ angular
                 value: function (child) {
                     return firebase.auth().currentUser.getIdToken(true)
                         .then(idToken => {
-                           const user = firebase.auth().currentUser
+                            const user = firebase.auth().currentUser
                             return $http({
                                 method: "POST",
                                 url: `https://babymomma-b6771.firebaseio.com/children/.json?auth=${idToken}`,

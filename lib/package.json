@@ -9,6 +9,7 @@
     "firebase": "^4.8.0"
   },
   "devDependencies": {
+    "angular-materialize": "^0.2.2",
     "eslint-config-google": "^0.9.1",
     "grunt": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",

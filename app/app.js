@@ -54,11 +54,11 @@ angular.module("babyMammaApp").config(function ($routeProvider) {
             controller: "SleepListCtrl",
             resolve: { isAuth }
         })
-        .when('/sleep/start', {
-            templateUrl: 'app/sleep/partials/startSleep.html',
-            controller: 'SleepStartCtrl',
-            resolve: { isAuth }
-        })
+        // .when('/sleep/start', {
+        //     templateUrl: 'app/sleep/partials/startSleep.html',
+        //     controller: 'SleepStartCtrl',
+        //     resolve: { isAuth }
+        // })
         .when('/sleep/end/:napId', {
             templateUrl: 'app/sleep/partials/endSleep.html',
             controller: 'SleepEndCtrl',

@@ -1,7 +1,7 @@
 angular
 .module("babyMammaApp")
 .controller("ChildListCtrl", function (ChildFactory, $scope, AuthFactory) {
-    
+
     $scope.children = []
 
     /**
@@ -13,6 +13,7 @@ angular
 
         $scope.children = data
     })
+    
 })
 
 // What this does is make Angular now watch the values URL in the browser, and when it changes,

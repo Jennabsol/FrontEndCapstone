@@ -23,7 +23,7 @@ angular
         $scope.addPoop = function () {
             const diaper = {
 
-
+                "childId": $scope.child.childId,
                 "notes": $scope.newPoopDiaper.notes
 
 

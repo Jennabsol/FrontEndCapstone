@@ -1,5 +1,5 @@
 angular
-    .module("babyMammaApp")
+    .module("babyMammaApp",)
     .controller("WetAddCtrl", function ($scope, DiaperFactory, $location, $timeout) {
         $scope.newWetDiaper = {}
 
@@ -23,7 +23,7 @@ angular
         $scope.addWet = function () {
             const diaper = {
 
-
+                "childId": $scope.child.childId,
                 "notes": $scope.newWetDiaper.notes
 
 

@@ -16,7 +16,7 @@
         <li>
             <a href="/#!/diaperChanges/poop/list">Poop Diaper List</a>
         </li>
-        
+
     </ul>
 </div>
 
@@ -35,7 +35,6 @@
 </div>
 
 <div ng-controller="PoopAddCtrl">
-
     <h2>Add Poop Diaper</h2>
     <form ng-submit="addPoop()">
         <div>
@@ -56,5 +55,17 @@
         </div>
 
         <button>Add</button>
+    </form>
+</div>
+
+<div ng-controller="SleepStartCtrl">
+    <h2>Start nap</h2>
+    <form ng-submit="startNap()">
+        <div>
+            Where?
+            <input type="text" ng-model="newNap.location">
+        </div>
+
+        <button>Start</button>
     </form>
 </div>

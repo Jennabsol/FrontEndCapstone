@@ -82,7 +82,8 @@ angular
                                 data: {
                                     "location": nap.location,
                                     "Date": new Date(),
-                                    "startTime": new Date()
+                                    "startTime": new Date(),
+                                    "childId": nap.childId
 
 
                                 }

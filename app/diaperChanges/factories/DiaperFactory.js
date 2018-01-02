@@ -83,7 +83,8 @@ angular
                                 data: {
                                     "date": new Date(),
                                     // "wetId": idGenerator.next().value,
-                                    "notes": diaper.notes
+                                    "notes": diaper.notes,
+                                    "childId": diaper.childId
 
 
                                 }
@@ -104,7 +105,8 @@ angular
                                 data: {
                                     "date": new Date(),
                                     // "poopId": idGenerator.next().value,
-                                    "notes": diaper.notes
+                                    "notes": diaper.notes,
+                                    "childId": diaper.childId
 
 
                                 }
