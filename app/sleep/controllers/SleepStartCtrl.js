@@ -19,6 +19,11 @@ angular
                 $scope.sleep = SleepFactory.cache
             }
         })
+        $scope.showMe = false;
+        $scope.myFunc = function () {
+            $scope.showMe = !$scope.showMe;
+        }
+
         // when the button is pushed this creates on object
         $scope.startNap = function () {
             const nap = {

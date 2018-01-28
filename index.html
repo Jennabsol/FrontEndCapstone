@@ -8,23 +8,30 @@
     <title>babyMamma</title>
 
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/materialize.css">
+    <link rel="stylesheet" href="./lib/node_modules/angular-materialize/css/style.css">
+    <script src="https:/cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </head>
 
 <body ng-app="babyMammaApp" ng-cloak>
 
     <nav ng-include="'app/navigation/partials/navigation.html'"></nav>
     <div ng-include="'app/quoteApi/partials/quoteDisplay.html'"></div>
-    <!-- <div ng-include="'https://api.forismatic.com/api/1.0/?method=getQuote&format=html&lang=en'"></div> -->
+    <!-- <div ng-include="'https:/api.forismatic.com/api/1.0/?method=getQuote&format=html&lang=en'"></div> -->
     <!-- <div ng-include="'app/child/partials/childList.html'"></div> -->
 
     <div ng-view></div>
 
     <script src="./lib/node_modules/firebase/firebase.js"></script>
+
     <script src="./lib/node_modules/angular/angular.min.js"></script>
     <script src="./lib/node_modules/angular-route/angular-route.min.js"></script>
     <script src="./lib/node_modules/chart.js/dist/Chart.bundle.min.js"></script>
     <script src="./lib/node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
     <script src="./lib/node_modules/tc-angular-chartjs/dist/tc-angular-chartjs.min.js"></script>
+    <script src="./lib/node_modules/angular-materialize/src/angular-materialize.min.js"></script>
+    <script src="./app/materialize.js"></script>
     <script src="./app/app.js"></script>
     <script src="./app/app.config.js"></script>
 
@@ -39,7 +46,7 @@
     <script src="./app/child/controllers/ChildDetailCtrl.js"></script>
     <script src="./app/child/controllers/DashCtrl.js"></script>
     <script src="./app/child/controllers/testCtrl.js"></script>
-    <script src="./app/child/controllers/BarCtrl.js"></script>
+    
     <script src="./app/sleep/factories/SleepFactory.js"></script>
     <script src="./app/sleep/controllers/SleepDetailCtrl.js"></script>
     <script src="./app/sleep/controllers/SleepStartCtrl.js"></script>

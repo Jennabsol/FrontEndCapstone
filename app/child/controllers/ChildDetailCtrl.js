@@ -3,15 +3,20 @@ angular
     .module("babyMammaApp")
     .controller("ChildDetailCtrl",
         function ($scope, $location, $routeParams, ChildFactory, $timeout) {
-           
+
             /**
              * Use the factory to get the details of a single child
              */
+
 
             ChildFactory.single($routeParams.childId).then(child => {
                 $scope.child = child
 
             })
+            $scope.showMe = false;
+            $scope.myFunc = function () {
+                $scope.showMe = !$scope.showMe;
+            }
 
 
 
@@ -44,8 +49,9 @@ angular
             $scope.deleteChild = function () {
                 console.log("first time hitting delete")
                 ChildFactory.delete($routeParams.childId).then(() => {
-                    $timeout()
+
                     $location.url("/");
+                    
                 })
 
 

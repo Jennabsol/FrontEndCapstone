@@ -1,6 +1,6 @@
 angular
 .module("babyMammaApp")
-.controller("SleepEndCtrl", function ($scope, SleepFactory, $routeParams) {
+.controller("SleepEndCtrl", function ($scope, SleepFactory, $routeParams, $route) {
     $scope.newNap = {}
 
     /**
@@ -53,6 +53,7 @@ angular
          */
         .then(sleep => {
             $scope.sleep = sleep
+            $route.reload()
         })
     }
 })

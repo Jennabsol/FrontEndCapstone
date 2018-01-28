@@ -1,6 +1,6 @@
 angular
     .module("babyMammaApp",)
-    .controller("WetAddCtrl", function ($scope, DiaperFactory, $location, $timeout) {
+    .controller("WetAddCtrl", function ($scope, DiaperFactory, $location, $timeout, $route) {
         $scope.newWetDiaper = {}
 
         /**
@@ -19,6 +19,11 @@ angular
                 $scope.wet = DiaperFactory.cache
             }
         })
+        $scope.showMe = false;
+        $scope.myFunc = function () {
+            $scope.showMe = !$scope.showMe;
+        }
+
         // when the button is pushed this creates on object
         $scope.addWet = function () {
             const diaper = {
@@ -52,6 +57,7 @@ angular
                  */
                 .then(wet => {
                     $scope.wet = wet
+                    $route.reload()
                 })
 
         }

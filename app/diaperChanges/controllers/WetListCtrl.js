@@ -1,6 +1,6 @@
 angular
     .module("babyMammaApp")
-    .controller("WetListCtrl", function (DiaperFactory,ChildFactory, $scope, $timeout, $location, $routeParams) {
+    .controller("WetListCtrl", function (ChildFactory, DiaperFactory, $scope, $timeout, $location, $routeParams, $route) {
         $scope.wet = []
 
         /**
@@ -17,9 +17,9 @@ angular
 
         $scope.deleteDiaperBtn = function (wet) {
             console.log("first time hitting delete")
-            DiaperFactory.deleteDiaper("wet", wet.id ).then(() => {
-                $timeout()
-                $location.url("/diaperChanges/wet/list");
+            DiaperFactory.deleteDiaper("wet", wet.id).then(() => {
+
+                $route.reload()
             })
 
 

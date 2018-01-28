@@ -8,10 +8,10 @@ angular
             },
             // SleepFactory.list returns all children which is used by ChildListCtrl
             "napList": {
-                value: function () {
+                value: function (childId) {
                     return $http({
                         method: "GET",
-                        url: "https://babymomma-b6771.firebaseio.com/sleep/.json"
+                        url: `https://babymomma-b6771.firebaseio.com/sleep/.json?orderBy="childId"&equalTo="${childId}"`
                     }).then(response => {
                         const data = response.data
 

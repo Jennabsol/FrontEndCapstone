@@ -19,6 +19,12 @@ angular
                 $scope.children = ChildFactory.cache
             }
         })
+
+        $scope.showMe = false;
+        $scope.myFunc = function () {
+            $scope.showMe = !$scope.showMe;
+        }
+
         // when the button is pushed this creates on object
         $scope.addChild = function () {
             const child = {

@@ -1,12 +1,12 @@
-<ul ng-controller="NavCtrl">
-    <span ng-if="isAuthenticated()">
-        <li>
-            <a href="/#!/child/list">Home</a>
-        </li>
-        <li class="align-right">
-            <a href="#" ng-click="logout()">Logout</a>
-            <h4>{{ displayName }}</h4>
-        </li>
-    </span>
-    <span ng-if="!isAuthenticated()"></span>
-</ul>
+<div ng-controller="NavCtrl">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">BabyMomma</a>
+      <span ng-if="isAuthenticated()"></span>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/#!/child/list">home</a></li>
+        <li><a>{{ displayName }}</a></li>
+        <li><a href="#" ng-click="logout()">Logout</a></li>
+      </ul>
+      <span ng-if="!isAuthenticated()"></span>
+    </div>
+</div>

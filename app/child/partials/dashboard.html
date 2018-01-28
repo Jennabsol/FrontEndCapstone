@@ -1,50 +1,120 @@
 <!--Partial file for showing dashboard -->
-<div>
+<div class="name">
 
-    <a href="#"></a>{{ child.name }}</a>
+        <div class="col s12 m5">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                            <a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h1>
+
+                                {{ child.name }}</a>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 </div>
 
 <div ng-controller="ChildDetailCtrl">
+    <div class="name" ng-click="myFunc()">
+        <h4>
+            Child Porfile
+        </h4>
 
-    <div>
-        <h1>{{ child.name }}</h1>
+    </div>
+    <div ng-show="showMe">
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card-panel">
+                    <span>
 
-        <h3>Date of birth: {{ child.DOB | date:"fullDate" }}</h3>
-        <h3>Age: {{ getAge(child.DOB) }}</h3>
-        <h3>Parent id: {{ child.parentId }}</h3>
-        <h3>Child id: {{ child.childId }}</h3>
+                        <ul>
+
+                            <li>Date of birth: {{ child.DOB | date:"fullDate" }}</li>
+                            <li>Age: {{ getAge(child.DOB) }}</li>
+                            <li>Parent id: {{ child.parentId }}</li>
+                            <li>Child id: {{ child.childId }}</li>
+
+                            <li>
+                                <button class="btn-floating waves-effect waves-light black" ng-click="deleteChild()">Delete</button>
+                            </li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <button ng-click="deleteChild()">Delete</button>
+
+    <!-- <h3>{{ child.name }}</h3>
+    <ul>
+
+        <li>Date of birth: {{ child.DOB | date:"fullDate" }}</li>
+        <li>Age: {{ getAge(child.DOB) }}</li>
+        <li>Parent id: {{ child.parentId }}</li>
+        <li>Child id: {{ child.childId }}</li>
+
+
+        <li>
+            <button ng-click="deleteChild()">Delete</button>
+        </li>
+    </ul> -->
 </div>
 
-<div ng-controller="PoopAddCtrl">
-    <h2>Add Poop Diaper</h2>
-    <form ng-submit="addPoop()">
-        <div>
-            Notes:
-            <input type="text" ng-model="newPoopDiaper.notes">
-        </div>
 
-        <button>Add</button>
-    </form>
+
+
+
+
+<div ng-controller="SleepListCtrl">
+    <h2>Sleep List</h2>
+
+    <ul ng-repeat="nap in sleep">
+
+        <li>Date: {{ nap.Date | date : "shortDate" }}</li>
+        <li>start: {{ nap.startTime | date : "shortTime" }}</li>
+        <li>end: {{ nap.endTime | date : "shortTime" }}</li>
+        <li>Location: {{ nap.location }}</li>
+        <li>Reason: {{ nap.reason }}</li>
+        <li>Notes: {{ nap.notes }}</li>
+
+
+        <li>
+            <button ng-click="deleteNapBtn()">Delete</button>
+        </li>
+    </ul>
 </div>
-
-<div ng-controller="WetAddCtrl">
-    <h2>Add Wet Diaper</h2>
-    <form ng-submit="addWet()">
-        <div>
-            Notes:
-            <input type="text" ng-model="newWetDiaper.notes">
-        </div>
-
-        <button>Add</button>
-    </form>
-</div>
-
 <div ng-controller="SleepStartCtrl">
-    <h2>Start nap</h2>
+    <div>
+
+        <button class="btn-floating btn-large waves-effect waves-light red" ng-click="myFunc()">Add Nap</button>
+    </div>
+    <div ng-show="showMe">
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card-panel blue-grey darken-1">
+                    <span class="white-text">
+                        <h2>Add Nap</h2>
+                        <form ng-submit="startNap()">
+                            <div>
+                                Where?
+                                <input type="text" ng-model="newNap.location">
+                            </div>
+
+                            <button class="btn-floating waves-effect waves-light black">Start</button>
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <h2>Start nap</h2>
     <form ng-submit="startNap()">
         <div>
             Where?
@@ -52,16 +122,10 @@
         </div>
 
         <button>Start</button>
-    </form>
+    </form> -->
 </div>
 
-<div ng-controller="SleepListCtrl">
-    <h2>Sleep List</h2>
 
-    <div ng-repeat="nap in sleep">
-        <a href="#!/sleep/detail/{{ nap.id }}">{{ nap.location }}</a>
-    </div>
-</div>
 
 <div ng-controller="WetListCtrl">
     <h2>Wet Diaper List</h2>
@@ -78,6 +142,41 @@
         </li>
     </ul>
 </div>
+<div ng-controller="WetAddCtrl">
+    <div>
+
+        <button class="btn-floating btn-large waves-effect waves-light red" ng-click="myFunc()">Add Nap</button>
+    </div>
+    <div ng-show="showMe">
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card-panel blue-grey darken-1">
+                    <span class="white-text">
+                        <h2>Add Wet Diaper</h2>
+                        <form ng-submit="addWet()">
+                            <div>
+                                Notes:
+                                <input type="text" ng-model="newWetDiaper.notes">
+                            </div>
+
+                            <button class="btn-floating waves-effect waves-light black">Add</button>
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <h2>Add Wet Diaper</h2>
+    <form ng-submit="addWet()">
+        <div>
+            Notes:
+            <input type="text" ng-model="newWetDiaper.notes">
+        </div>
+
+        <button>Add</button>
+    </form> -->
+</div>
+
 
 <div ng-controller="PoopListCtrl">
     <h2>Poop Diaper List</h2>
@@ -94,12 +193,42 @@
         </li>
     </ul>
 </div>
+<div ng-controller="PoopAddCtrl">
+    <div>
+
+        <button class="btn-floating btn-large waves-effect waves-light red" ng-click="myFunc()">Add Nap</button>
+    </div>
+    <div ng-show="showMe">
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card-panel blue-grey darken-1">
+                    <span class="white-text">
+                        <h2>Add Poop Diaper</h2>
+                        <form ng-submit="addPoop()">
+                            <div>
+                                Notes:
+                                <input type="text" ng-model="newPoopDiaper.notes">
+                            </div>
+
+                            <button class="btn-floating waves-effect waves-light black">Add</button>
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <h2>Add Poop Diaper</h2>
+    <form ng-submit="addPoop()">
+        <div>
+            Notes:
+            <input type="text" ng-model="newPoopDiaper.notes">
+        </div>
+
+        <button>Add</button>
+    </form> -->
+</div>
 
 <div ng-controller="testCtrl">
     <canvas tc-chartjs-bar chart-data="data" chart-options="options" width="350" height="200">
-    </canvas>
-</div>
-<div ng-controller="BarCtrl">
-    <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series">
     </canvas>
 </div>
