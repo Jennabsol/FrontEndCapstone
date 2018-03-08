@@ -4,6 +4,7 @@
 
 body {
     font-size: 1.5em;
+    background-image: url("../background.png")
 }
 
 input,
@@ -30,12 +31,13 @@ nav>ul>li {
     margin: 0 0 0 70px;
 }
 
-.card.horizontal  {
+.card.horizontal {
     margin: auto;
     width: 50%;
     border: 3px;
     padding: 10px;
 }
+
 /* .name {
     margin: auto;
     width: 50%;
@@ -45,7 +47,6 @@ nav>ul>li {
     text-align: center;
 } */
 
-
 .card {
     margin: auto;
     width: 50%;
@@ -53,3 +54,8 @@ nav>ul>li {
     padding: 10px;
 }
 
+.childContainer_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
