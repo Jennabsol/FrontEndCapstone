@@ -4,7 +4,10 @@
 
 body {
     font-size: 1.5em;
-    background-image: url("../background.png")
+    background-image: url("../img/MacBookPro.png");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 900px;
 }
 
 input,
@@ -52,10 +55,22 @@ nav>ul>li {
     width: 50%;
     border: 3px;
     padding: 10px;
+    float: center;
+
 }
 
 .childContainer_grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    float: center;
 
 }
+
+#RL_btn {
+    background-color: #ee6e73 !important;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+

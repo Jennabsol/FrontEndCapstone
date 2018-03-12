@@ -1,61 +1,71 @@
-<div class="center">
+<div class="container">
+    <div class="center">
 
-    <h2>Child List</h2>
+        <div ng-include="'app/quoteApi/partials/quoteDisplay.html'"></div>
+        <!-- <div ng-include="'https:/api.forismatic.com/api/1.0/?method=getQuote&format=html&lang=en'"></div> -->
+
+        <h2>Child List</h2>
 
 
-    <!-- Notice anything strange about the anchor tag there?
+        <!-- Notice anything strange about the anchor tag there?
         That's a strange looking URL for the href property. Well, since you're now starting the process
         of building a SPA, then you don't want any link to actually refresh the browser, and so by prepending
         the new location with #, you ensure that. You'll see this in action as we set up the routing. -->
-    <div class="row">
+        <div class="row">
 
-        <div ng-repeat="child in children">
-            <div class="col s4">
+            <div ng-repeat="child in children">
 
-                <div class="center promo promo-example">
-                    <div class="card-image">
-                        <a href="http://thecatapi.com">
-                            <img src="http://thecatapi.com/api/images/get?format=src&type=gif">
-                        </a>
-                    </div>
-                    <!-- <div class="card-stacked">
-                        <div class="card-content"> -->
+                <div class="col s4 m6">
+                    <div class="card">
+                        <!-- <div class="center promo promo-example"> -->
+                        <div class="card-image">
+                            <p class='image-container'>
+
+                                <a href="#!/child/dashboard/{{ child.id }}">
+                                    <img src="/img/baby3.png">
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="card-content">
                             <a class="promo-caption" href="#!/child/dashboard/{{ child.id }}">{{ child.name }}</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</div>
-<!-- <div ng-repeat="child in children">
+
+
+        <!-- <div ng-repeat="child in children">
     <a href="#!/child/dashboard/{{ child.id }}">{{ child.name }}</a>
 </div> -->
 
-<div ng-controller="ChildCreateCtrl">
-    <div class="fixed-action-btn">
+        <div ng-controller="ChildCreateCtrl">
+            <div class="fixed-action-btn">
 
-        <button class="btn-floating btn-large waves-effect waves-light red" ng-click="myFunc()">Add Child</button>
-    </div>
-    <div ng-show="showMe">
-        <div class="row">
-            <div class="col s12 m5">
-                <div class="card-panel blue-grey darken-1">
-                    <span class="white-text">
-                        <h2>Add Child</h2>
-                        <form ng-submit="addChild()">
-                            <div>
-                                Name:
-                                <input type="text" ng-model="newChild.name">
-                            </div>
-                            <div>
-                                Date of Birth:
-                                <input type="date" ng-model="newChild.DOB">
-                            </div>
-                            <button class="btn-floating waves-effect waves-light black">Add Child</button>
-                        </form>
-                    </span>
+                <button class="btn-floating btn-large waves-effect waves-light red" ng-click="myFunc()">Add Child</button>
+            </div>
+            <div ng-show="showMe">
+                <div class="row">
+                    <div class="col s12 m5">
+                        <div class="card-panel blue-grey darken-1">
+                            <span class="white-text">
+                                <h2>Add Child</h2>
+                                <form ng-submit="addChild()">
+                                    <div>
+                                        Name:
+                                        <input type="text" ng-model="newChild.name">
+                                    </div>
+                                    <div>
+                                        Date of Birth:
+                                        <input type="date" ng-model="newChild.DOB">
+                                    </div>
+                                    <button class="btn-floating waves-effect waves-light black">Add Child</button>
+                                </form>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

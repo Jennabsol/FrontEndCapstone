@@ -1,7 +1,51 @@
-<div>
+<!-- <div>
     <input type="text" placeholder="Full Name" ng-model="auth.name" autofocus>
     <input type="email" placeholder="Email address" ng-model="auth.email" autofocus>
     <input type="password" placeholder="Password" ng-model="auth.password">
     <button ng-click="registerUser(auth)">Register</button>
     <button ng-click="logMeIn(auth)">Login</button>
+</div> -->
+<div class="container">
+    <div class="card-panel">
+        <h4 class="header2">Wellcome to BabyMomma</h4>
+        <div class="row">
+            <form class="col s12 right-alert">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-account-circle prefix"></i>
+                        <input id="first_input2" type="text" class="validate" ng-model="auth.name" autofocus>
+                        <label for="first_input2" data-error="Please enter your full name." data-success="Perfect!" class="">Full Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-communication-email prefix"></i>
+                        <input id="email_input2" type="email" class="validate" ng-model="auth.email" autofocus>
+                        <label for="email_input2"  data-error="Please enter valid email." data-success="I Like it!">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-lock-outline prefix"></i>
+                        <input id="password2" type="password" ng-model="auth.password" class="validate">
+                        <label for="password2" class="">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button ng-click="logMeIn(auth)" id="RL_btn" class="btn waves-effect waves-light right">Login
+                            <i class="mdi-content-send right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button ng-click="registerUser(auth)" id="RL_btn" class="btn waves-effect waves-light right">Register
+                            <i class="mdi-content-send right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

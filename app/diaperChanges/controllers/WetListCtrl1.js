@@ -15,9 +15,8 @@ angular
 
         })
 
-
-        $scope.deleteDiaperWetBtn = function (wet) {
-            console.log("first time hitting delete")
+        $scope.deleteDiaperBtn = function (wet) {
+            console.log("first time hitting deleteWet")
             DiaperFactory.deleteDiaper("wet", wet.id).then(() => {
 
                 $route.reload()

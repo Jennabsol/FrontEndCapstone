@@ -18,7 +18,7 @@ angular
 
         })
         $scope.deleteNapBtn = function (sleep) {
-            console.log("first time hitting delete")
+            console.log("first time hitting delete sleep control")
             SleepFactory.deleteNap("sleep", sleep.id).then(() => {
                 // $timeout()
                 // $location.url("/diaperChanges/sleep/list");

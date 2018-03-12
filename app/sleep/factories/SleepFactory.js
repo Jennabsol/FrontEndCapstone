@@ -42,7 +42,7 @@ angular
             // SleepFactory.delete deletes chilc from firebase
             "deleteNap": {
                 value: function (key) {
-                    console.log("inside the delete! 1st time")
+                    console.log("inside the delete! 1st time sleepFactory")
                     return firebase.auth().currentUser.getIdToken(true)
                         .then(idToken => {
                             return $http({
